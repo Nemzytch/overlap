@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outil de similarité de la SERP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/ico" sizes="16x16" href="./favicon.png">
+</head>
+<body>
+    <div class="container">
+        <h1>Test de similarité de la SERP</h1>
+        <form id="input-area">
+
+            <div class="type-input-group">
+            <div class="input-group">
+                <label for="keyword1">Mot-clé 1</label>
+                <input type="text" id="keyword1" placeholder="Entrer le premier mot-clé" required>
+            </div>
+            <div class="input-group">
+                <label for="keyword2">Mot-clé 2</label>
+                <input type="text" id="keyword2" placeholder="Entrer le second mot-clé" required>
+            </div>
+            <div class="input-group">
+                <label for="keyword2">Mot-clé 3 (optionel)</label>
+                <input type="text" id="keyword3" placeholder="Entrer le second mot-clé" required>
+            </div>
+            </div>
+            <button
+                id="buttom-compare"
+                onclick="fetchAndCompare()"
+                class="loadable"
+            >
+                <span>Comparer la similarité</span>
+                <div
+                    id="form-gif"
+                    class="loading-gif "
+                >
+                    <div class="loader-circle"></div>
+                    <div class="loader-bar"></div>
+                </div>
+            </button>
+        </form>
+        <div id="result" class="result-area"></div>
+        <div id="venn" class="venn-diagram"></div>
+    </div>
+    <div class="url-lists">
+        <div id="list1Urls" class="url-list"></div>
+        <div id="list2Urls" class="url-list"></div>
+    </div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
